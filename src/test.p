@@ -1,0 +1,9 @@
+println("a");
+println("b");
+println("c");
+a=3;
+b=2;
+if(a==b){
+print("a");
+}
+/*adjnsjnd*/
