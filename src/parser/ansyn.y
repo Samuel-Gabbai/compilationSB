@@ -6,7 +6,7 @@
 %}
 
 %token <i> NB
-%token PRINT AFF END PV PO PF G READ BEGIN FOR TO DO END PRINTLN INT DOUBLE CHAR CO CF PP PPE PG PGE IF IO FI
+%token PRINT AFF END PV PO PF G READ BEGIN FOR TO DO END PRINTLN INT DOUBLE CHAR CO CF PP PPE PG PGE IF IO FI WHILE ELSE
 %token <s> ID
 %token <s> CH
 %token <v> SYMBOL
@@ -37,6 +37,7 @@ Inst:	PRINT PO E PF {$$= new InstPrint($3);}
       | {$$=new InstVide();}
       | FOR ID AFF E TO E DO BEGIN ListeI END { $$= new InstFor(env.getSym($2),$4,$6,$9);}
       | IF PO EB PF IO ListeI FI { $$= new InstIf($3,$6);}
+      |	WHILE PO EB PF IO ListeI FI { $$= new InstWhile($3,$6);}
 ;
 
 E: 		E PLUS E {$$=new ExpPlus($1,$3);}

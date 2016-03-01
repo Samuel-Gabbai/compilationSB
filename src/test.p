@@ -2,8 +2,9 @@ println("a");
 println("b");
 println("c");
 a=3;
-b=2;
-if(a==b){
+b=9;
+while(a<b){
 print("a");
+a++;
 }
 /*adjnsjnd*/

@@ -46,6 +46,10 @@ begin {return parser.BEGIN;}
 
 end { return parser.END;}
 
+while { return parser.WHILE;}
+
+else { return parser.ELSE;}
+
 {id} { parser.yylval = new Pval(yytext()); return parser.ID;}
 
 =  {return parser.AFF;}
